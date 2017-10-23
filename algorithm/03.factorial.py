@@ -11,13 +11,13 @@ def fact(i):
         return i * fact(i - 1)
 
 #2
-print fact(2)
+print(fact(2))
 # 3!=6
-print fact(3)
+print(fact(3))
 # 5! = 120
-print fact(5)
+print(fact(5))
 # 8! = 120 * 6 * 7 = 40320
-print fact(8)
+print(fact(8))
 
 
 
