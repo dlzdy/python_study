@@ -19,9 +19,8 @@ def load_data(filePath):
 
 if __name__ is '__main__':
     data, cityName = load_data('city.txt')
-    print(cityName)
-    print(data)
-
+    #print(cityName)
+    #print(data)
     km = KMeans(n_clusters=3)
     label = km.fit_predict(data) #2,0,1,2,2 ... ...
     expenses = np.sum(km.cluster_centers_, axis=1)
