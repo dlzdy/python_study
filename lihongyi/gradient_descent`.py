@@ -7,8 +7,8 @@ x_data = [338., 333., 328., 207., 226., 22., 179., 60., 208., 606.]
 y_data = [640., 633., 619., 393., 428., 27., 193., 66., 226., 1591.]
 # y_data = b+ w * xdata
 
-x = np.arange(-200, -100, 1) #bias
-y = np.arange(-5, 5, 0.1) #weight
+x = np.arange(-200, -100, 1) #bias, -200, -199, -101, -100. 100 个
+y = np.arange(-5, 5, 0.1) #weight,[-5,-4.9,-4.8, 0.  4.8, 4.9 5.0] 100个
 Z = np.zeros((len(x), len(y)))
 X, Y = np.meshgrid(x,y)
 for i in range(len(x)):
