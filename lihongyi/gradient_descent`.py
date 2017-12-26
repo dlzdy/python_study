@@ -44,15 +44,15 @@ for i in range(iteration):
         b_grad = b_grad - 2.0*(y_data[n] - b - w*x_data[n])*1.0
         w_grad = w_grad - 2.0*(y_data[n] - b - w*x_data[n]*x_data[n])
     #############
-    lr_b = lr_b + b_grad**2
-    lr_w = lr_w + w_grad**2
+    # lr_b = lr_b + b_grad**2
+    # lr_w = lr_w + w_grad**2
 
 
     # Updata parameters
-    # b = b - lr * b_grad
-    # w = w - lr * w_grad
-    b = b - lr_b * b_grad
-    w = w - lr_w * w_grad
+    b = b - lr * b_grad
+    w = w - lr * w_grad
+    # b = b - lr_b * b_grad
+    # w = w - lr_w * w_grad
     # Store parameters for ploting
     b_history.append(b)
     w_history.append(w)
