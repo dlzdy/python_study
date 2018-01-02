@@ -22,7 +22,8 @@ clf.fit(X, Y)
 w = clf.coef_[0] # Coefficient ,系数
 a = -w[0] / w[1]
 xx = np.linspace(-5, 5)
-yy = a * xx - (clf.intercept_[0]) / w[1] # intercept_截距
+bias = clf.intercept_[0]
+yy = a * xx - bias / w[1] # intercept_截距
 
 # plot the parallels to the separating hyperplane that pass through the support vectors
 # 第一个向量
