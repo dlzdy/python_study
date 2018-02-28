@@ -24,8 +24,8 @@ for i in range(len(x)):
 b = -120 # inital b
 w = -4 # inital w
 # lr = 0.0000001 # learning rate
-lr = 0.0000001 # learning rate
-iteration = 100000
+lr = 0.0000006 # learning rate
+iteration = 800000
 
 # Store initial values for plotting.
 b_history = [b]
@@ -42,7 +42,7 @@ for i in range(iteration):
     w_grad = 0.0
     for n in range(len(x_data)):
         b_grad = b_grad - 2.0*(y_data[n] - b - w*x_data[n])*1.0
-        w_grad = w_grad - 2.0*(y_data[n] - b - w*x_data[n]*x_data[n])
+        w_grad = w_grad - 2.0*(y_data[n] - b - w*x_data[n])*x_data[n]
     #############
     # lr_b = lr_b + b_grad**2
     # lr_w = lr_w + w_grad**2
