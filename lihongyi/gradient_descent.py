@@ -27,8 +27,8 @@ X, Y = np.meshgrid(bias_x, weight_y)
 b = -120 # inital b
 w = -4 # inital w
 # lr = 0.0000001 # learning rate
-lr = 0.0000001 # learning rate
-iteration = 100000
+lr = 0.0000006 # learning rate
+iteration = 800000
 
 # Store initial values for plotting.
 b_history = [b]
