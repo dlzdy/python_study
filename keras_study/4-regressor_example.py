@@ -15,14 +15,16 @@ np.random.seed(1337)  # for reproducibility
 from keras.models import Sequential
 from keras.layers import Dense
 import matplotlib.pyplot as plt
+from keras import optimizers
 
-# create some data
+# create some data, 200个数据
 X = np.linspace(-1, 1, 200)
 np.random.shuffle(X)    # randomize the data
-Y = 0.5 * X + 2 + np.random.normal(0, 0.05, (200, ))
+# Y = 0.5 * X + 2 + np.random.normal(0, 0.05, (200, ))
+Y = 0.5 * X + 2
 # plot data
-plt.scatter(X, Y)
-plt.show()
+#plt.scatter(X, Y)
+# plt.show()
 
 X_train, Y_train = X[:160], Y[:160]     # first 160 data points
 X_test, Y_test = X[160:], Y[160:]       # last 40 data points
@@ -30,10 +32,12 @@ X_test, Y_test = X[160:], Y[160:]       # last 40 data points
 # build a neural network from the 1st layer to the last layer
 model = Sequential()
 
-model.add(Dense(units=1, input_dim=1)) 
+model.add(Dense(units=1, input_dim=1))
 
-# choose loss function and optimizing method
-model.compile(loss='mse', optimizer='sgd')
+# choose loss function and optimizing method, mean_squared_error=平方差，sgd=随机梯度下降法
+# model.compile(loss='mse', optimizer='sgd')
+sgd = optimizers.SGD(lr=0.03)
+model.compile(loss='mse', optimizer=sgd)
 
 # training
 print('Training -----------')
